@@ -11,7 +11,7 @@ function SectionWrapper(Component, idName) {
       initial="hidden"
       whileInView="show"
       viewport={{once : true , amount : 0.25}}
-      className={`${styles.padding} max-w7xl mx-auto relative z-0`}>
+      className={`${styles.padding} relative w-full max-W-7xl xl:mx-auto mx-auto z-0`}>
         
         <span className="hash-span" id={idName}> 
           &nbsp;
