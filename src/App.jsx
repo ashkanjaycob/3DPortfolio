@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { BrowserRouter } from "react-router-dom";
-import { About , Contact , Experience , Feedbacks , Hero , Navbar , Tech , Works} from "./components"
+import { About , Contact , Experience , Feedbacks , Hero , Navbar , StarsCanvas, Tech , Works} from "./components"
 
 function App() {
 
@@ -20,6 +20,7 @@ function App() {
           <Feedbacks />
           <div className="relative z-0">
               <Contact />
+              {/* <StarsCanvas /> */}
           </div>
         </div>
 

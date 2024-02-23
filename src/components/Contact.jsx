@@ -6,6 +6,8 @@ import { styles } from "../Styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../HOC";
 import { slideIn } from "../utils/motion";
+// import { services } from "../constants";
+
 
 const Contact = () => {
 
@@ -18,9 +20,44 @@ const Contact = () => {
 
   const [isloading, setIsloading] = useState(false);
 
-  const handleCahnge = (e) => {};
+  const handleCahnge = (event) => {
+    const { name , value } = event.target;
+    setForm({...form,[name]:value})
+  };
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setIsloading(true);
+
+    emailjs.send('service_iuxg1wd'
+     , 'template_u1epljd' , 
+     {
+      from_name : form.name ,
+      to_name : "Ashkan Yaghobi" , 
+      from_email : form.email , 
+      to_email : 'ashkanygh5@gmail.com' , 
+      message : form.message , 
+     } , 
+     'gzZMXY5OO0ZsGfzE-'
+     ).then (() => {
+      setIsloading(false) ; 
+      alert('Thank you . i will get back to you as soon as possible. ');
+
+      setForm({
+        name : "" , 
+        email : "" , 
+        message : ""
+      })
+     } , (error) => {
+      setIsloading(false) , 
+      alert("something went wrong !")
+      console.log(error);
+     })
+  };
+
+//Email id =  template_u1epljd 
+// services id = service_iuxg1wd 
+// Pub key = gzZMXY5OO0ZsGfzE-
 
   return <>
   
@@ -42,7 +79,7 @@ const Contact = () => {
           </label>
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Email</span>
-            <input type="emai" name="email" value={form.name} onChange={handleCahnge}
+            <input type="emai" name="email" value={form.email} onChange={handleCahnge}
             placeholder="Whats Your Email ?" 
             className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none fonr-medium"/>
           </label>

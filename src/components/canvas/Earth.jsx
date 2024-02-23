@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { Suspense } from "react"
 import { Canvas } from "@react-three/fiber"
-import { Preload , OrbitControls , useGLTF } from "@react-three/drei"
+import {  OrbitControls , useGLTF } from "@react-three/drei"
 import CanvasLoader from '../Loader'
 
 

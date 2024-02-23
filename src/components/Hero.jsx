@@ -23,12 +23,11 @@ const Hero = () => {
               Hi , I'm <span className="text-[#915eff]">Ashkan</span>
             </h1>
             <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-              I develop websites & apps with love using <br /> Raect & all it's latest Tools. 
+              I develop React apps with love using <br /> Raect & all it's latest Tools like Redux, Router & ... 
             </p>
           </div>
         </div>
-        <ComputerCanvas />
-
+        <ComputerCanvas className="mt-8"/>
         <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
           <a href="#about">
             <div className="w-[30px] h-[64px] rounded-3xl border-2 border-secondary flex justify-center  items-start p-2">
